@@ -3,7 +3,7 @@ class TaskListsController < ApplicationController
   before_action :user_identity
 
   def index
-    # byebug
+    # byebugs
     @task_lists = if params[:term]
       @user.task_lists.where('name LIKE ?', "%#{params[:term]}%").order(name: :asc)
     else
